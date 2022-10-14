@@ -1,0 +1,62 @@
+{
+  "id": "8409d87f-4771-4388-93aa-fa7b9954de98",
+  "meta": {
+    "name": "colab_deepcontrast",
+    "application_area": "Google CoLab",
+    "task": "Classification",
+    "task_extended": "Contrast detection - Google CoLab Notebook - Classification",
+    "data_type": "Image/CT scan",
+    "data_source": "Private",
+    "framework": "colab",
+    "colab_link": "https://colab.research.google.com/drive/1-mmKFqLojlgsmvfeLUT-oU0hOKyhOTLS?usp=sharing",
+    "github_link": "https://github.com/AIM-Harvard/DeepContrast"
+  },
+  "publication": {
+    "title": "Deep Learning–based Detection of Intravenous Contrast Enhancement on CT Scans",
+    "source": "https://doi.org/10.1148/ryai.210285",
+    "year": 2022,
+    "authors": "Ye, Z., Qian, J.M., Hosny, A., Zeleznik, R., Plana, D., Likitlersuang, J., Zhang, Z., Mak, R.H., Aerts, H.J. and Kann, B.H.",
+    "email": "Benjamin_Kann@dfci.harvard.edu",
+    "abstract": "Identifying the presence of intravenous contrast material on CT scans is an important component of data curation for medical imaging–based artificial intelligence model development and deployment. Use of intravenous contrast material is often poorly documented in imaging metadata, necessitating impractical manual annotation by clinician experts. Authors developed a convolutional neural network (CNN)–based deep learning platform to identify intravenous contrast enhancement on CT scans. For model development and validation, authors used six independent datasets of head and neck (HN) and chest CT scans, totaling 133 480 axial two-dimensional sections from 1979 scans, which were manually annotated by clinical experts. Five CNN models were trained first on HN scans for contrast enhancement detection. Model performances were evaluated at the patient level on a holdout set and external test set. Models were then fine-tuned on chest CT data and externally validated. This study found that Digital Imaging and Communications in Medicine metadata tags for intravenous contrast material were missing or erroneous for 1496 scans (75.6%). An EfficientNetB4-based model showed the best performance, with areas under the curve (AUCs) of 0.996 and 1.0 in HN holdout (n = 216) and external (n = 595) sets, respectively, and AUCs of 1.0 and 0.980 in the chest holdout (n = 53) and external (n = 402) sets, respectively. This automated, scan-to-prediction platform is highly accurate at CT contrast enhancement detection and may be helpful for artificial intelligence model development and clinical application.",
+    "url": "https://doi.org/10.1148/ryai.210285",
+    "google_scholar": "https://scholar.google.com/scholar?cites=4993190987271886763&as_sdt=40000005&sciodt=0,22&hl=en",
+    "bibtex": "@article{ye2022deep, title={Deep Learning--based Detection of Intravenous Contrast Enhancement on CT Scans}, author={Ye, Zezhong and Qian, Jack M and Hosny, Ahmed and Zeleznik, Roman and Plana, Deborah and Likitlersuang, Jirapat and Zhang, Zhongyi and Mak, Raymond H and Aerts, Hugo JWL and Kann, Benjamin H}, journal={Radiology: Artificial Intelligence}, volume={4}, number={3}, pages={e210285}, year={2022}, publisher={Radiological Society of North America}}"
+  },
+  "model": {
+    "description": "EfficientNetB4",
+    "provenance": "",
+    "architecture": "",
+    "learning_type": "",
+    "format": "",
+    "io": {
+      "input": {
+        "format": [],
+        "single":{
+          "format": [],
+          "dim_limits": [
+          {
+            "min": 0,
+            "max": 0
+          },
+          {
+            "min": 0
+          },
+          {
+            "min": 0
+          }
+        ],
+         "description":""
+        },
+        "description": ""
+      },
+      "output": [
+        {
+          "name": "",
+          "type": "",
+          "description": ""
+        }
+      ]
+    }
+  },
+  "modelhub": {}
+}
