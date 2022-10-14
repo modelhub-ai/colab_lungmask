@@ -1,50 +1,30 @@
-# Deep Contrast
+# Lung mask
 
-Deep learning model to automatically classify contrast enhanced and non-contrast enhanced CT scans.
+Automated lung segmentation in CT under presence of severe pathologies.
 
-Run this model in [Google CoLab](https://colab.research.google.com/drive/1-mmKFqLojlgsmvfeLUT-oU0hOKyhOTLS?usp=sharing).
+Run this model in [Google CoLab](https://colab.research.google.com/drive/1IrIIYVHIuq2oD6gXGNAuAqsYF9TcuhTy).
 
 ## meta
 
 |                  |                                      |
 | ---------------- |--------------------------------------|
-| id               | 8409d87f-4771-4388-93aa-fa7b9954de98 |
-| application_area | EfficientNetB4                       |
-| task             | Classification                       |
-| task_extended    | EfficientNetB4 classification        |
+| application_area | U-net                                |
+| task             | Segmentation                         |
+| task_extended    | U-net lung segmentation              |
+| code source      | https://github.com/JoHof/lungmask    |
 | data_type        | Image/CT scan                        |
-| data_source      | http://www.image-net.org/            |
+
 
 ## publication
 
-|                |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
-| -------------- |------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| title          | Deep Learning–based Detection of Intravenous Contrast Enhancement on CT Scans                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
-| source         | Radiology: Artificial Intelligence                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
-| url | https://doi.org/10.1148/ryai.210285                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
-| year           | 2022                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
-| authors        | Ye, Z., Qian, J.M., Hosny, A., Zeleznik, R., Plana, D., Likitlersuang, J., Zhang, Z., Mak, R.H., Aerts, H.J. and Kann, B.H.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
-| abstract       | Identifying the presence of intravenous contrast material on CT scans is an important component of data curation for medical imaging–based artificial intelligence model development and deployment. Use of intravenous contrast material is often poorly documented in imaging metadata, necessitating impractical manual annotation by clinician experts. Authors developed a convolutional neural network (CNN)–based deep learning platform to identify intravenous contrast enhancement on CT scans. For model development and validation, authors used six independent datasets of head and neck (HN) and chest CT scans, totaling 133 480 axial two-dimensional sections from 1979 scans, which were manually annotated by clinical experts. Five CNN models were trained first on HN scans for contrast enhancement detection. Model performances were evaluated at the patient level on a holdout set and external test set. Models were then fine-tuned on chest CT data and externally validated. This study found that Digital Imaging and Communications in Medicine metadata tags for intravenous contrast material were missing or erroneous for 1496 scans (75.6%). An EfficientNetB4-based model showed the best performance, with areas under the curve (AUCs) of 0.996 and 1.0 in HN holdout (n = 216) and external (n = 595) sets, respectively, and AUCs of 1.0 and 0.980 in the chest holdout (n = 53) and external (n = 402) sets, respectively. This automated, scan-to-prediction platform is highly accurate at CT contrast enhancement detection and may be helpful for artificial intelligence model development and clinical application. |
-| google_scholar | https://scholar.google.com/scholar?cites=4993190987271886763&as_sdt=40000005&sciodt=0,22&hl=en|
-| bibtex         | @article{ye2022deep, title={Deep Learning--based Detection of Intravenous Contrast Enhancement on CT Scans}, author={Ye, Zezhong and Qian, Jack M and Hosny, Ahmed and Zeleznik, Roman and Plana, Deborah and Likitlersuang, Jirapat and Zhang, Zhongyi and Mak, Raymond H and Aerts, Hugo JWL and Kann, Benjamin H}, journal={Radiology: Artificial Intelligence}, volume={4}, number={3}, pages={e210285}, year={2022}, publisher={Radiological Society of North America}}|
-
-## model
-
-|               |                                                               |
-| ------------- |---------------------------------------------------------------|
-| description   | EfficientNetB4                                                |
-| provenance    | Conrtibuted by author                                         |
-| architecture  | Convolutional Neural Network (CNN)                            |
-| learning_type | Supervised learning                                           |
-| format        | .h5                                                           |
-| I/O           | model I/O can be viewed [here](contrib_src/model/config.json) |
-| license       | model license can be viewed [here](contrib_src/license/model) |
-
-## run
-
-To run this model and view others in the collection, view the instructions on [ModelHub](http://app.modelhub.ai/).
-
-## contribute
-
-To contribute models, visit the [ModelHub docs](https://modelhub.readthedocs.io/en/latest/).
+|                |                                                    |
+| -------------- | ----------------------------------------------------- |
+| title          | Automatic lung segmentation in routine imaging is primarily a data diversity problem, not a methodology problem |
+| source         | European Radiology Experimental |
+| url            | https://doi.org/10.1186/s41747-020-00173-2 |
+| year           | 2020 |
+| authors        | Hofmanninger, J., Prayer, F., Pan, J., Röhrich, S., Prosch, H., & Langs, G. |
+| abstract       | Background: Automated segmentation of anatomical structures is a crucial step in image analysis. For lung segmentation in computed tomography, a variety of approaches exists, involving sophisticated pipelines trained and validated on different datasets. However, the clinical applicability of these approaches across diseases remains limited. Methods: We compared four generic deep learning approaches trained on various datasets and two readily available lung segmentation algorithms. We performed evaluation on routine imaging data with more than six different disease patterns and three published data sets. Results: Using different deep learning approaches, mean Dice similarity coefficients (DSCs) on test datasets varied not over 0.02. When trained on a diverse routine dataset (n = 36), a standard approach (U-net) yields a higher DSC (0.97 ± 0.05) compared to training on public datasets such as the Lung Tissue Research Consortium (0.94 ± 0.13, p = 0.024) or Anatomy 3 (0.92 ± 0.15, p = 0.001). Trained on routine data (n = 231) covering multiple diseases, U-net compared to reference methods yields a DSC of 0.98 ± 0.03 versus 0.94 ± 0.12 (p = 0.024). Conclusions: The accuracy and reliability of lung segmentation algorithms on demanding cases primarily relies on the diversity of the training data, highlighting the importance of data diversity compared to model choice. Efforts in developing new datasets and providing trained models to the public are critical. By releasing the trained model under General Public License 3.0, we aim to foster research on lung diseases by providing a readily available tool for segmentation of pathological lungs. |
+| google_scholar | https://scholar.google.com/scholar?cites=70004818277158591&as_sdt=40000005&sciodt=0,22&hl=en|
+| bibtex         | @article{hofmanninger2020automatic, title={Automatic lung segmentation in routine imaging is primarily a data diversity problem, not a methodology problem}, author={Hofmanninger, Johannes and Prayer, Forian and Pan, Jeanny and R{\"o}hrich, Sebastian and Prosch, Helmut and Langs, Georg}, journal={European Radiology Experimental}, volume={4}, number={1}, pages={1--13}, year={2020}, publisher={SpringerOpen}}|
 
